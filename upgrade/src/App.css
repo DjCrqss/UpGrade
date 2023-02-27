@@ -68,31 +68,30 @@ h2{
 }
 
 /* Cards */
-#period-container{
+/* #period-container{
   min-height: 65vh;
-  box-sizing: border-box;
-
-}
+} */
 #year-container{
+  overflow-x: scroll;
+
   min-height: 100%;
   box-sizing: border-box;
-  padding: 5%;
+  padding: 2rem;
   display: flex;
   flex-wrap: nowrap;
-  overflow-x: auto;
   scroll-snap-type: x mandatory;
 }
 .year{
-  width: 96%;
+  width: min(96%, 400px);
   margin: 0 2%;
-  height: 65vh;
+  height: 75vh;
   flex: 0 0 auto;
   scroll-snap-align: center;
 
   overflow-y: scroll;
 
   display: flex;
-  gap: 1em;
+  gap: 1rem;
   flex-direction: column;
 
   background-color: var(--card-active-colour);
@@ -106,27 +105,47 @@ h2{
   font-weight: bold;
   color: var(--title-colour);
 }
+#mock-add-year-button{
+  flex: 0 0 auto;
+    height: 75vh;
+    scroll-snap-align: center;
+    width: min(200px, 30%);
+    margin: 0 2%;
+    background-color: var(--card-colour);
+    border-radius: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.year-terms-container{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
 
 .term{
   display: flex;
   flex-direction: column;
   gap: 1em;
-  flex: 1;
   background-color: var(--yellow-bg-colour);
   border-radius: 1em;
-  padding: 1.5rem;
+  padding: 1.2rem;
   box-sizing: border-box;
 }
 .term-title{
   font-weight: bold;
   color: var(--yellow-text-colour);
 }
+.term-courses-container{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
 
 .course{
   display: flex;
   flex-direction: column;
   gap: 1em;
-  flex: 1;
   background-color: var(--yellow-card-colour);
   border-radius: 1em;
   padding: 1.5rem;
@@ -139,6 +158,21 @@ h2{
 
 
 
+
+
+
+/* New button */
+
+.new-button-container{
+  margin-top: auto;
+}
+.new-button-link {
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 0.8em;
+  cursor: pointer;
+  float: right;
+}
 
 
 /* Dropdown menu */

@@ -17,9 +17,11 @@ export default function PeriodContainer() {
     return (
         <div id="period-container">
             <div id="year-container">
-                {yearElements}
+                 {yearElements}
+                <div id="mock-add-year-button">
+                    <AddItemButton dataCategory={childCategory} parentId={myId} />
+                </div>
             </div>
-            <AddItemButton dataCategory={childCategory} parentId={myId} />
         </div>
     );
 }

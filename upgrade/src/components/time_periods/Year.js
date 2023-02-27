@@ -22,7 +22,9 @@ export default function Year({yearData}) {
     return (
         <div className="year">
             <span className="year-title">{myName}</span>
-            {termElements}
+            <div className="year-terms-container">
+                {termElements}
+            </div>
             <DropdownMenu dataCategory={dataCategory} id={myId}/>
             <AddItemButton dataCategory={childCategory} parentId={myId} />
         </div>

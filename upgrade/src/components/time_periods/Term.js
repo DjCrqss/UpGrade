@@ -22,7 +22,9 @@ export default function Term({termData}) {
     return (
         <div className="term">
             <span className="term-title">{myName}</span>
-            {courseElements}
+            <div className="term-courses-container">
+                {courseElements}
+            </div>
             <DropdownMenu dataCategory={dataCategory} id={myId}/>
             <AddItemButton dataCategory={childCategory} parentId={myId} />
         </div>
