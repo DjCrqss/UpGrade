@@ -1,20 +1,143 @@
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-
+/* Testing */
 div{
-  background-color: rgba(0, 0, 255, 0.062) ;
-  padding: 1em;
+  /* background-color: rgba(209, 209, 227, 0.062) ; */
+  /* padding: 1em; */
   position: relative;
 }
+
+
+#app-base{
+  width: 450px;
+}
+
+
+
+/* Colours */
+:root{
+  --background-colour: #1E1D20;
+  --header-colour: #2A262D;
+  --card-colour: #2A282C;
+  --card-active-colour: #7C787E;
+  --popup-colour: #575459;
+  --popup-input-colour: #4E4C50;
+
+  --title-colour: #CBCBCB;
+  --subtitle-colour: #9D95A2; 
+  --card-text-colour: #7C787E;
+  --popup-text-colour: #A6A1A8;
+
+  --purple-bg-colour: #847394;
+  --purple-text-colour: #CEC0DC;
+
+  --yellow-bg-colour: #8A7145;
+  --yellow-card-colour: #B89C69;
+  --yellow-text-colour: #FED792;
+
+  --green-bg-colour: #466740;
+  --green-card-colour: #6C8C6C;
+  --green-text-colour: #BFE7A1;
+
+  --blue-bg-colour: #325C66;
+  --blue-card-colour: #5A7F8A;
+  --blue-text-colour: #A1DEE7;
+}
+
+body{
+  background-color: var(--background-colour);
+}
+
+/* Header */
+header{
+  height: 25vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  background-color: var(--header-colour);
+}
+h1{
+  color: var(--title-colour);
+  font-size: 3em;
+  margin: 0;
+}
+h2{
+  color: var(--subtitle-colour);
+  font-size: 0.85em;
+  margin: -0.5em 0 0 4em;
+}
+
+/* Cards */
+#period-container{
+  min-height: 65vh;
+  box-sizing: border-box;
+
+}
+#year-container{
+  min-height: 100%;
+  box-sizing: border-box;
+  padding: 5%;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+.year{
+  width: 96%;
+  margin: 0 2%;
+  height: 65vh;
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+
+  overflow-y: scroll;
+
+  display: flex;
+  gap: 1em;
+  flex-direction: column;
+
+  background-color: var(--card-active-colour);
+  border-radius: 1em;
+  padding: 1.5rem;
+  box-sizing: border-box;
+
+}
+.year-title{
+  font-size: 2em;
+  font-weight: bold;
+  color: var(--title-colour);
+}
+
+.term{
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  flex: 1;
+  background-color: var(--yellow-bg-colour);
+  border-radius: 1em;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+.term-title{
+  font-weight: bold;
+  color: var(--yellow-text-colour);
+}
+
+.course{
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  flex: 1;
+  background-color: var(--yellow-card-colour);
+  border-radius: 1em;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+.course-title{
+  color: var(--yellow-text-colour);
+}
+
+
+
 
 
 

@@ -1,11 +1,10 @@
 import React from "react";
-import RemoveItemButton from "../buttons/RemoveItemBtn";
-import RenameItemButton from "../buttons/RenameItemBtn";
+import DropdownMenu from "../buttons/DropdownMenu";
 
 export default function Course({courseData}) {
 
     // my data
-    const dataCategory = "courses";
+    const dataCategory = "course";
     const myName = courseData.name;
     const myId = courseData.myId;
 
@@ -14,10 +13,9 @@ export default function Course({courseData}) {
    
 
     return (
-        <div>
-            <h3>{myName}</h3>
-            <RemoveItemButton dataCategory={dataCategory} id={myId} />
-            <RenameItemButton dataCategory={dataCategory} id={myId} />
+        <div className="course">
+            <span className="course-title">{myName}</span>
+            <DropdownMenu dataCategory={dataCategory} id={myId}/>
         </div>
     );
 }

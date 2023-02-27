@@ -1,16 +1,15 @@
 import React from "react";
 import { DataContext } from "../../dataContext";
 import AddItemButton from "../buttons/AddItemBtn";
-import RemoveItemButton from "../buttons/RemoveItemBtn";
-import RenameItemButton from "../buttons/RenameItemBtn";
+import DropdownMenu from "../buttons/DropdownMenu";
 import Course from "./Course";
 
 export default function Term({termData}) {
     const { courses } = React.useContext(DataContext);
 
     // my data
-    const dataCategory = "terms";
-    const childCategory = "courses";
+    const dataCategory = "term";
+    const childCategory = "course";
     const myName = termData.name;
     const myId = termData.myId;
 
@@ -21,11 +20,10 @@ export default function Term({termData}) {
     });
 
     return (
-        <div>
-            <h2>{myName}</h2>
+        <div className="term">
+            <span className="term-title">{myName}</span>
             {courseElements}
-            <RemoveItemButton dataCategory={dataCategory} id={myId} />
-            <RenameItemButton dataCategory={dataCategory} id={myId} />
+            <DropdownMenu dataCategory={dataCategory} id={myId}/>
             <AddItemButton dataCategory={childCategory} parentId={myId} />
         </div>
     );
