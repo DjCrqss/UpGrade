@@ -6,11 +6,9 @@ export default function AddItemButton({dataCategory, parentId}) {
 
     function action() {
         const name = prompt("Enter a name for the new item");
-        const id = Math.floor(Math.random() * 1000000000); // make robust later
         const payload = {
             name: name,
-            parentId: parentId,
-            myId: id
+            parentId: parentId
         }
         addItem(dataCategory, payload);
     }

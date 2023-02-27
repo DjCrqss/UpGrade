@@ -53,30 +53,36 @@ export const DataContextProvider = (props) => {
 
 
     function renameItem(dataCategory,id, payload) {
+        console.log("hmm", dataCategory, id, payload);
         switch (dataCategory) {
             case "years":
                 const modifiedYears = [...years]
-                Object.assign(modifiedYears[id], payload);
+                const renameYearsIndex = modifiedYears.map(e => e.myId).indexOf(id);
+                Object.assign(modifiedYears[renameYearsIndex], payload);
                 setYears(modifiedYears);
                 break;
             case "terms":
                 const modifiedTerms = [...terms]
-                Object.assign(modifiedTerms[id], payload);
+                const renameTermsIndex = modifiedTerms.map(e => e.myId).indexOf(id);
+                Object.assign(modifiedTerms[renameTermsIndex], payload);
                 setTerms(modifiedTerms);
                 break;
             case "courses":
                 const modifiedCourses = [...courses]
-                Object.assign(modifiedCourses[id], payload);
+                const renameCoursesIndex = modifiedCourses.map(e => e.myId).indexOf(id);
+                Object.assign(modifiedCourses[renameCoursesIndex], payload);
                 setCourses(modifiedCourses);
                 break;
             case "groups":
                 const modifiedGroups = [...groups]
-                Object.assign(modifiedGroups[id], payload);
+                const renameGroupsIndex = modifiedGroups.map(e => e.myId).indexOf(id);
+                Object.assign(modifiedGroups[renameGroupsIndex], payload);
                 setGroups(modifiedGroups);
                 break;
             case "grades":
                 const modifiedGrades = [...grades]
-                Object.assign(modifiedGrades[id], payload);
+                const renameGradesIndex = modifiedGrades.map(e => e.myId).indexOf(id);
+                Object.assign(modifiedGrades[renameGradesIndex], payload);
                 setGrades(modifiedGrades);
                 break;
             default:
@@ -89,26 +95,31 @@ export const DataContextProvider = (props) => {
         switch (dataCategory) {
             case "years":
                 const modifiedYears = [...years]
+                payload.myId = createUniqueId(modifiedYears);
                 modifiedYears.push(payload);
                 setYears(modifiedYears);
                 break;
             case "terms":
                 const modifiedTerms = [...terms]
+                payload.myId = createUniqueId(modifiedTerms);
                 modifiedTerms.push(payload);
                 setTerms(modifiedTerms);
                 break;
             case "courses":
                 const modifiedCourses = [...courses]
+                payload.myId = createUniqueId(modifiedCourses);
                 modifiedCourses.push(payload);
                 setCourses(modifiedCourses);
                 break;
             case "groups":
                 const modifiedGroups = [...groups]
+                payload.myId = createUniqueId(modifiedGroups);
                 modifiedGroups.push(payload);
                 setGroups(modifiedGroups);
                 break;
             case "grades":
                 const modifiedGrades = [...grades]
+                payload.myId = createUniqueId(modifiedGrades);
                 modifiedGrades.push(payload);
                 setGrades(modifiedGrades);
                 break;
@@ -156,6 +167,16 @@ export const DataContextProvider = (props) => {
         }
 
     }
+
+
+    function createUniqueId(array) {
+        const length = 10;
+        while(true){
+            let id =  Math.random().toString(36).substring(2, length+2);
+            if(!array.some(e => e.myId === id)) return id;
+        }
+    }
+
         
 
 
