@@ -8,3 +8,9 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+
+div{
+  background-color: rgba(0, 0, 255, 0.062) ;
+  padding: 1em;
+}
