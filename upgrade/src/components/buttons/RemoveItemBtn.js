@@ -9,6 +9,6 @@ export default function RemoveItemButton({dataCategory, id}) {
     }
 
     return (
-        <button onClick={action}>X</button>
+        <button onClick={action}>Delete</button>
     );
 }

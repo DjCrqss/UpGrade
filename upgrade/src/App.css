@@ -13,4 +13,19 @@
 div{
   background-color: rgba(0, 0, 255, 0.062) ;
   padding: 1em;
+  position: relative;
+}
+
+
+
+/* Dropdown menu */
+.time-period-menu-container{
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.time-period-menu-dropdown{
+  position: absolute;
+  right: 0;
 }

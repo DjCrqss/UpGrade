@@ -4,6 +4,7 @@ import AddItemButton from "../buttons/AddItemBtn";
 import RemoveItemButton from "../buttons/RemoveItemBtn";
 import RenameItemButton from "../buttons/RenameItemBtn";
 import Term from "./Term";
+import DropdownMenu from "../buttons/DropdownMenu";
 
 export default function Year({yearData}) {
     const { terms } = React.useContext(DataContext);
@@ -24,8 +25,7 @@ export default function Year({yearData}) {
         <div>
             <h1>{myName}</h1>
             {termElements}
-            <RemoveItemButton dataCategory={dataCategory} id={myId} />
-            <RenameItemButton dataCategory={dataCategory} id={myId} />
+            <DropdownMenu dataCategory={dataCategory} id={myId}/>
             <AddItemButton dataCategory={childCategory} parentId={myId} />
         </div>
     );

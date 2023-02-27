@@ -13,6 +13,6 @@ export default function RenameItemButton({dataCategory, id}) {
     }
 
     return (
-        <button onClick={action}>R</button>
+        <button onClick={action}>Rename</button>
     );
 }
