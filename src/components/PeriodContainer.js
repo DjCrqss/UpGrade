@@ -1,6 +1,7 @@
 import React from "react";
 import { DataContext } from "../dataContext";
 import Year from "./time_periods/Year";
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 export default function PeriodContainer() {
     const { years, addItem } = React.useContext(DataContext);
@@ -10,7 +11,9 @@ export default function PeriodContainer() {
 
     const yearElements = years.map((year, index) => {
         return(
-            <Year key={index}  yearData={year} />
+            <CSSTransition key={index} timeout={300} classNames="fade-item">
+                <Year yearData={year} />
+            </CSSTransition>
         )
     })
 
@@ -24,12 +27,12 @@ export default function PeriodContainer() {
     
     return (
         <div id="period-container">
-            <div id="year-container">
-                 {yearElements}
+             <TransitionGroup id="year-container">
+             {yearElements}
                 <div id="mock-add-year-button" onClick = {() => addYear()}>
                     +
                 </div>
-            </div>
+             </TransitionGroup>
         </div>
     );
 }

@@ -86,6 +86,9 @@ h2{
 #year-container::-webkit-scrollbar {
   display: none;
 }
+.year::-webkit-scrollbar{
+  display: none;
+}
 
 .year{
   width: min(105%, 380px);
@@ -142,6 +145,7 @@ h2{
   border-radius: 1em;
   padding: 1.2rem;
   box-sizing: border-box;
+  
 }
 .term-title{
   font-weight: bold;
@@ -173,7 +177,6 @@ h2{
 
 
 /* New button */
-
 .new-button-container{
   margin-top: auto;
 }
@@ -245,8 +248,25 @@ h2{
 @media screen and (max-width: 600px) {
   body{
     font-size: 1.2em;
-    /* background-color: red; */
   }
 }
 
-  
+
+
+
+
+/* Fade items */
+.fade-item-enter {
+  opacity: 0;
+}
+.fade-item-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+.fade-item-exit {
+  opacity: 1;
+}
+.fade-item-exit-active {
+  opacity: 0;
+  transition: opacity 300ms ease-out;
+}
