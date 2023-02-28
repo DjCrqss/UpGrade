@@ -1,14 +1,13 @@
 /* Testing */
-div{
-  /* background-color: rgba(209, 209, 227, 0.062) ; */
-  /* padding: 1em; */
-  position: relative;
-}
 
 
 #app-base{
-  width: 450px;
+  max-width: 450px;
   user-select: none;
+}
+
+div{
+  position: relative;
 }
 
 
@@ -81,13 +80,20 @@ h2{
   display: flex;
   flex-wrap: nowrap;
   scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
 }
+
+#year-container::-webkit-scrollbar {
+  display: none;
+}
+
 .year{
-  width: min(96%, 400px);
+  width: min(105%, 380px);
   margin: 0 2%;
   height: 75vh;
   flex: 0 0 auto;
   scroll-snap-align: center;
+  -webkit-overflow-scrolling: touch;
 
   overflow-y: scroll;
 
@@ -110,7 +116,7 @@ h2{
   flex: 0 0 auto;
     height: 75vh;
     scroll-snap-align: center;
-    width: min(200px, 30%);
+    width: min(200px, 80%);
     margin: 0 2%;
     background-color: var(--card-colour);
     border-radius: 0.5em;
@@ -153,7 +159,7 @@ h2{
   gap: 1em;
   background-color: var(--yellow-card-colour);
   border-radius: 1em;
-  padding: 1.2rem;
+  padding: 1rem 1.5rem;
   box-sizing: border-box;
 }
 .course-title{
@@ -207,7 +213,7 @@ h2{
   font-family: 'Material Symbols Outlined';
   font-weight: bold;
   font-style: normal;
-  font-size: 1rem;
+  font-size: 1.5em;
   line-height: 1;
   letter-spacing: normal;
   text-transform: none;
@@ -235,3 +241,12 @@ h2{
 .time-period-menu-item:hover{
   background-color: var(--popup-input-colour);
 }
+
+@media screen and (max-width: 600px) {
+  body{
+    font-size: 1.2em;
+    /* background-color: red; */
+  }
+}
+
+  
