@@ -1,7 +1,7 @@
 import React from "react";
 import { DataContext } from "../../dataContext";
 
-export default function RenameItemButton({dataCategory, id}) {
+export default function RenameItemButton({dataCategory, id, clickAction}) {
     const { renameItem } = React.useContext(DataContext);
 
     function action() {
@@ -10,9 +10,15 @@ export default function RenameItemButton({dataCategory, id}) {
             name: newName,
         }
         renameItem(dataCategory, id, payload);
+        clickAction(false);
     }
 
     return (
-        <button onClick={action}>Rename</button>
+        <div className="time-period-menu-item" onClick={action}>
+        <span className="material-symbols-outlined">
+            drive_file_rename_outline
+        </span>
+        <span>Rename</span>
+    </div>
     );
 }

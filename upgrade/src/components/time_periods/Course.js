@@ -2,15 +2,11 @@ import React from "react";
 import DropdownMenu from "../buttons/DropdownMenu";
 
 export default function Course({courseData}) {
-
     // my data
     const dataCategory = "course";
     const myName = courseData.name;
     const myId = courseData.myId;
 
-    console.log(courseData);
-
-   
 
     return (
         <div className="course">

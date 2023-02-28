@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import RenameItemButton from "./RenameItemBtn";
 import RemoveItemButton from "./RemoveItemBtn";
 import useComponentVisible from "../common/Util";
@@ -8,11 +8,13 @@ export default function DropdownMenu({dataCategory, id}){
 
     return (
         <div className="time-period-menu-container" ref={ref}>
-            <button onClick={() => setIsComponentVisible(!isComponentVisible)}>...</button>
+            <span className="material-symbols-outlined" onClick={() => setIsComponentVisible(!isComponentVisible)}>
+                arrow_drop_down
+            </span>
             <div  style={{padding: '0'}}>
                 {isComponentVisible && <div className="time-period-menu-dropdown" >
-                    <RemoveItemButton dataCategory={dataCategory} id={id} />
-                    <RenameItemButton dataCategory={dataCategory} id={id} />
+                    <RenameItemButton dataCategory={dataCategory} id={id} clickAction={setIsComponentVisible}/>
+                    <RemoveItemButton dataCategory={dataCategory} id={id} clickAction={setIsComponentVisible}/>
                 </div>}
             </div>
         </div>

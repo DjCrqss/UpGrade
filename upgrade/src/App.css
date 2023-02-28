@@ -8,6 +8,7 @@ div{
 
 #app-base{
   width: 450px;
+  user-select: none;
 }
 
 
@@ -17,7 +18,7 @@ div{
   --background-colour: #1E1D20;
   --header-colour: #2A262D;
   --card-colour: #2A282C;
-  --card-active-colour: #7C787E;
+  --card-active-colour: #3B393D;
   --popup-colour: #575459;
   --popup-input-colour: #4E4C50;
 
@@ -103,7 +104,7 @@ h2{
 .year-title{
   font-size: 2em;
   font-weight: bold;
-  color: var(--title-colour);
+  color: var(--card-text-colour);
 }
 #mock-add-year-button{
   flex: 0 0 auto;
@@ -112,10 +113,14 @@ h2{
     width: min(200px, 30%);
     margin: 0 2%;
     background-color: var(--card-colour);
-    border-radius: 1em;
+    border-radius: 0.5em;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: bold;
+    font-size: 2em;
+    color: var(--card-active-colour);
+    cursor: pointer;
 }
 .year-terms-container{
   display: flex;
@@ -148,7 +153,7 @@ h2{
   gap: 1em;
   background-color: var(--yellow-card-colour);
   border-radius: 1em;
-  padding: 1.5rem;
+  padding: 1.2rem;
   box-sizing: border-box;
 }
 .course-title{
@@ -167,11 +172,12 @@ h2{
   margin-top: auto;
 }
 .new-button-link {
-  text-decoration: underline;
   font-weight: bold;
   font-size: 0.8em;
   cursor: pointer;
   float: right;
+  color: var(--title-colour);
+  margin-top: 0.2em;
 }
 
 
@@ -183,6 +189,49 @@ h2{
 }
 
 .time-period-menu-dropdown{
+  display: flex;
+  flex-direction: column;
   position: absolute;
   right: 0;
+  background-color: var(--popup-colour);
+  padding: 0.25em 0;
+  z-index: 10;
+  box-sizing: border-box;
+  border-radius: 0.5em;
+}
+.time-period-menu-container > span {
+
+  margin: 0.5em 0.5em 0 0;
+}
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: bold;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  cursor: pointer;
+  color: var(--title-colour);
+  user-select: none;
+}
+
+.time-period-menu-item{
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 0.85em;
+  color: var(--title-colour);
+  padding: 0.5em 1em;
+  cursor: pointer;
+}
+
+.time-period-menu-item:hover{
+  background-color: var(--popup-input-colour);
 }
