@@ -13,7 +13,7 @@ export default function Course({courseData, theme}) {
     return (
         <div className={`course course-${theme}`} onClick={()=>setActiveElement(myId)}>
             <span className="course-title">{myName}</span>
-            <DropdownMenu dataCategory={dataCategory} id={myId}/>
+            <DropdownMenu dataCategory={dataCategory} id={myId} name={myName}/>
         </div>
     );
 }

@@ -39,7 +39,7 @@ export default function Year({yearData}) {
             <TransitionGroup className="year-terms-container">
                 {termElements}
             </TransitionGroup>
-            <DropdownMenu dataCategory={dataCategory} id={myId}/>
+            <DropdownMenu dataCategory={dataCategory} id={myId} name={myName}/>
             <AddItemButton dataCategory={childCategory} parentId={myId} />
         </div>
     );

@@ -3,7 +3,7 @@ import RenameItemButton from "./RenameItemBtn";
 import RemoveItemButton from "./RemoveItemBtn";
 import useComponentVisible from "../common/Util";
 
-export default function DropdownMenu({ dataCategory, id }) {
+export default function DropdownMenu({ dataCategory, id, name }) {
     const { ref, isComponentVisible, setIsComponentVisible } = useComponentVisible();
 
     function handleClick(e){
@@ -18,7 +18,7 @@ export default function DropdownMenu({ dataCategory, id }) {
             </span>
 
             {isComponentVisible && <div className="time-period-menu-dropdown" >
-                <RenameItemButton dataCategory={dataCategory} id={id} clickAction={setIsComponentVisible} />
+                <RenameItemButton dataCategory={dataCategory} id={id} name={name} clickAction={setIsComponentVisible} />
                 <RemoveItemButton dataCategory={dataCategory} id={id} clickAction={setIsComponentVisible} />
             </div>}
 

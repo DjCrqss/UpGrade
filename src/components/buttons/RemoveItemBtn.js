@@ -4,9 +4,10 @@ import { DataContext } from "../../dataContext";
 export default function RemoveItemButton({dataCategory, id, clickAction}) {
     const { removeItem } = React.useContext(DataContext);
 
-    function action() {
-        removeItem(dataCategory, id);
+    function action(e) {
         clickAction(false);
+        e.stopPropagation();
+        removeItem(dataCategory, id);
     }
 
     return (

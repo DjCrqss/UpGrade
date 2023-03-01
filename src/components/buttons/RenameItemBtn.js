@@ -1,17 +1,18 @@
 import React from "react";
 import { DataContext } from "../../dataContext";
 
-export default function RenameItemButton({dataCategory, id, clickAction}) {
+export default function RenameItemButton({dataCategory, id, clickAction, name}) {
     const { renameItem } = React.useContext(DataContext);
 
-    function action() {
-        const newName = prompt("Enter a new name for the item").trim();
+    function action(e) {
+        clickAction(false);
+        e.stopPropagation();
+        const newName = prompt(`Rename ${name} to`).trim();
         if(!newName){return}
         const payload = {
             name: newName,
         }
         renameItem(dataCategory, id, payload);
-        clickAction(false);
     }
 
     return (

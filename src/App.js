@@ -4,6 +4,8 @@ import PeriodContainer from './components/PeriodContainer';
 import GradeView from './components/grade_view/GradeView';
 import { DataContext } from './dataContext';
 
+import PopupInput from './components/buttons/PopupInput';
+
 function App() {
   const [scroll, setScroll] = useState(false);
   const { activeElement } = useContext(DataContext);
@@ -38,6 +40,8 @@ function App() {
       </header>
       <PeriodContainer />
       <GradeView />
+
+      {/* <PopupInput /> */}
     </div>
   );
 }

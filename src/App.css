@@ -168,7 +168,27 @@ h2{
 
 
 
+/* Input field popup */
+#popup-input{
+  position: fixed;
+  /* bottom: 0; */
+  /* margin-bottom: calc(20px + env(keyboard-inset-height)); */
+  bottom: 0;
+  width: 100vw;
+  height: 5em;
+  background-color: var(--popup-colour);
+  z-index: 100;
+}
 
+#popup-backdrop{
+  height: 100vh;
+  width: 100vw;
+  background-color: #00000050;
+  z-index: 99;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
 
 
 /* New item button */
@@ -223,7 +243,6 @@ cursor: pointer;
   right: 0;
   top: 0;
 }
-
 .time-period-menu-dropdown{
   display: flex;
   flex-direction: column;
@@ -261,7 +280,6 @@ cursor: pointer;
 .time-period-menu-container > .material-symbols-outlined:hover{
   background-color: #ffffff10;
 }
-
 .time-period-menu-item{
   display: flex;
   align-items: center;
@@ -276,6 +294,15 @@ cursor: pointer;
 .time-period-menu-item:hover{
   background-color: var(--popup-input-colour);
 }
+
+
+
+
+
+
+
+
+
 
 @media screen and (max-width: 550px) {
   body{
