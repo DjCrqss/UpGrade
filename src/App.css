@@ -331,7 +331,7 @@ cursor: pointer;
   }
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1060px) {
   .small-view{
     width: 100% !important;
   }
