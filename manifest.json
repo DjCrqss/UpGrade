@@ -8,7 +8,8 @@
       "type": "image/png"
     }
   ],
-  "start_url": ".",
+  "start_url": "/UpGrade/",
+  "scope": "/UpGrade/",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
