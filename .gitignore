@@ -105,5 +105,7 @@ dist
 .vscode/settings.json
 
 # GH Pages build
-build/*
+build/
 
+build/asset-manifest.json
+build/index.html

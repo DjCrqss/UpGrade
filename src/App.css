@@ -171,19 +171,25 @@ h2{
 /* Input field popup */
 #popup-input{
   position: fixed;
-  /* bottom: 0; */
-  /* margin-bottom: calc(20px + env(keyboard-inset-height)); */
   bottom: 0;
-  width: 100vw;
+
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(560px, 100vw);
   height: 5em;
   background-color: var(--popup-colour);
   z-index: 100;
+  border-radius: 1em 1em 0 0;
+  box-sizing: border-box;
+  padding: 1em;
 }
 
 #popup-backdrop{
   height: 100vh;
   width: 100vw;
   background-color: #00000050;
+  backdrop-filter: blur(1px);
   z-index: 99;
   position: fixed;
   top: 0;

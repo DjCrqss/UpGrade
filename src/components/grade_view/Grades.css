@@ -146,6 +146,9 @@
     
     .slide-item-enter-done{
         right: 0 !important;
-    
+    }
+
+    #grade-view-body{
+        padding: 1em 0.5em;
     }
 }
