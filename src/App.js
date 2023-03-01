@@ -9,7 +9,7 @@ function App() {
   const { activeElement } = useContext(DataContext);
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      setScroll(window.scrollY > 60);
+      setScroll(window.scrollY > 10);
     });
 
     document.addEventListener('contextmenu', (e) => {

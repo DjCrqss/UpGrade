@@ -1,20 +1,10 @@
-/* Testing */
-
+/* Global styles */
 body{
   -webkit-tap-highlight-color: transparent;
+  user-select: none;
 }
 body::-webkit-scrollbar {
   display: none;
-}
-
-#app-base{
-  /* max-width: 450px; */
-  user-select: none;
-}
-
-.prevent-scroll{
-  height: 100vh;
-  overflow-y: hidden;
 }
 
 div{
@@ -44,7 +34,7 @@ body{
 
 /* Header */
 header{
-  height: 25vh;
+  height: 15vh;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -88,7 +78,7 @@ h2{
 /* Cards */
 #year-container{
   overflow-x: scroll;
-
+  width: 100%;
   min-height: 100%;
   box-sizing: border-box;
   padding: 2rem;
@@ -96,9 +86,11 @@ h2{
   flex-wrap: nowrap;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
+
+  transition: width 0.6s;
 }
 .small-view{ /* This shrinks panel on laptops */
-  width: calc(100vw - 600px);
+  width: calc(100vw - 550px) !important;
 }
 
 #year-container::-webkit-scrollbar {
@@ -114,6 +106,7 @@ h2{
   height: 75vh;
   flex: 0 0 auto;
   scroll-snap-align: center;
+  scroll-snap-stop: always;
   -webkit-overflow-scrolling: touch;
 
   overflow-y: scroll;
@@ -284,21 +277,27 @@ cursor: pointer;
   background-color: var(--popup-input-colour);
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 550px) {
   body{
-    font-size: 1.2em;
+    font-size: 1em;
   }
   .year, #mock-add-year-button-container{
     margin: 0 0.25em;
+  }
+
+  .prevent-scroll{
+    transition: height 0.2s ease-in;
+    height: calc(100vh - 42px); /* Removes scroll given by address bar on mobile devices */
+    overflow-y: hidden;
   }
 }
 
 @media screen and (max-width: 800px) {
   .small-header{
-    padding: 2.25rem;
+    padding: 0.8rem;
   }
   .small-header h1{
-    font-size: 2em;
+    font-size: 1.8em;
   }
   .small-header h2{
     font-size: 0.58em;
@@ -307,7 +306,7 @@ cursor: pointer;
 
 @media screen and (max-width: 1100px) {
   .small-view{
-    width: initial;
+    width: 100% !important;
   }
 }
 

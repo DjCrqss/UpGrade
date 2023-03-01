@@ -149,6 +149,10 @@ export const DataContextProvider = (props) => {
 
     }
 
+    function getCourseById(id) {
+        return courses.find(e => e.myId === id);
+    }
+
     function loadLocalData() {
         const localYears = localStorage.getItem("years");
         const localTerms = localStorage.getItem("terms");
@@ -208,6 +212,7 @@ export const DataContextProvider = (props) => {
         addItem,
         removeItem,
         setActiveElement,
+        getCourseById
     }
 
     return <DataContext.Provider value={dataContextStore}>{props.children}</DataContext.Provider>
