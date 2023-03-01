@@ -1,0 +1,100 @@
+:root{
+    --top-bar-height: 2.8em;
+}
+
+
+#grade-view-backdrop {
+    background-color: #00000030;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 100vw;
+    pointer-events: none;
+    display: flex;
+    justify-content: right;
+}
+
+#grade-view-container {
+    position: fixed;
+    top: var(--top-bar-height);
+    right: 2vw;
+    background-color: var(--background-colour);
+    height: calc(100vh - var(--top-bar-height));
+    border-radius: 1em 1em 0 0;
+    pointer-events: all;
+    width: min(100vw, 600px);
+    overflow: clip;
+}
+
+#grade-view {
+    overflow-y: scroll;
+    position: relative;
+    height: 100%;
+}
+
+#grade-view::-webkit-scrollbar {
+    background-color: transparent;
+    width: 0.2em;
+}
+
+#grade-view::-webkit-scrollbar-thumb {
+    background-color: var(--card-colour);
+    border-radius: 1em;
+}
+
+/* Testing */
+#grade-view-body {
+    height: 160vh;
+}
+
+
+#grade-view-header {
+    height: 9em;
+    background-color: var(--header-colour);
+    display: flex;
+    align-items: flex-end;
+    padding: 1.5em 1.5em;
+    box-sizing: border-box;
+    border-bottom: 1px solid var(--border-colour);
+}
+
+
+@media screen and (max-width: 1100px) {
+    #grade-view-backdrop {
+        width: 100vw;
+        pointer-events: all;
+        background-color: #1c1b1eb8;
+        backdrop-filter: blur(3px);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #grade-view-container {
+       right: 0;
+
+    }
+}
+
+
+
+/* Slide items */
+.slide-item-enter {
+    top: 105vh !important;
+}
+
+.slide-item-enter-active {
+    top: var(--top-bar-height) !important;
+    transition: top 300ms ease-out;
+}
+
+.slide-item-enter-done{
+    top: var(--top-bar-height) !important;
+
+}
+
+
+.slide-item-exit-active {
+    top: 105vh !important;
+    transition: top 300ms ease-out;
+}

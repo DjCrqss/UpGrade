@@ -165,15 +165,25 @@ export const DataContextProvider = (props) => {
 
     useEffect(() => {
         if (!dataToSave) {return}
+
+        // remove excess data
+        const modifiedTerms = [...terms].filter(e => years.some(y => y.myId === e.parentId));
+        const modifiedCourses = [...courses].filter(e => modifiedTerms.some(t => t.myId === e.parentId));
+
+        // close course popup if element or it's parent is removed
+        if(!modifiedCourses.some(e => e.myId === activeElement)){ setActiveElement(false);}
+
         // save data to local storage
         localStorage.setItem("years", JSON.stringify(years));
-        localStorage.setItem("terms", JSON.stringify(terms));
-        localStorage.setItem("courses", JSON.stringify(courses));
+        localStorage.setItem("terms", JSON.stringify(modifiedTerms));
+        localStorage.setItem("courses", JSON.stringify(modifiedCourses));
         localStorage.setItem("groups", JSON.stringify(groups));
         localStorage.setItem("grades", JSON.stringify(grades));
-        setDataToSave(false);
-    }, [dataToSave, years, terms, courses, groups, grades]);
 
+        setDataToSave(false);            
+    }, [dataToSave, years, terms, courses, groups, grades, activeElement]);
+
+    // Load data from storage on load
     useEffect(() => {
         loadLocalData();
     }, []);
@@ -185,9 +195,6 @@ export const DataContextProvider = (props) => {
             if (!array.some(e => e.myId === id)) return id;
         }
     }
-
-
-
 
     const dataContextStore = {
         colours,

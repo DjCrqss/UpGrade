@@ -9,12 +9,9 @@ export default function Course({courseData, theme}) {
     const myId = courseData.myId;
     const { setActiveElement } = React.useContext(DataContext);
 
-    function setElement(){
-        console.log("setActiveElement", myId)
-    }
 
     return (
-        <div className={`course course-${theme}`} onClick={()=>setElement()}>
+        <div className={`course course-${theme}`} onClick={()=>setActiveElement(myId)}>
             <span className="course-title">{myName}</span>
             <DropdownMenu dataCategory={dataCategory} id={myId}/>
         </div>

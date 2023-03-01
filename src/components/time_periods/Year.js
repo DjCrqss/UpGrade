@@ -22,7 +22,7 @@ export default function Year({yearData}) {
     }
 
     const handleScroll = ref => {
-        ref.current.scrollIntoView({ behavior: "smooth", block: "center" });
+        ref.current.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
     }
 
     const termElements = terms.filter(e => e.parentId === myId).map((term, index) => {

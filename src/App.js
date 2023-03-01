@@ -1,18 +1,34 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import './App.css';
 import PeriodContainer from './components/PeriodContainer';
+import GradeView from './components/grade_view/GradeView';
+import { DataContext } from './dataContext';
 
 function App() {
   const [scroll, setScroll] = useState(false);
+  const { activeElement } = useContext(DataContext);
   useEffect(() => {
     window.addEventListener("scroll", () => {
       setScroll(window.scrollY > 60);
     });
+
+    document.addEventListener('contextmenu', (e) => {
+      e.preventDefault();
+    });
+
+    return () => {
+      window.removeEventListener("scroll", () => {
+        setScroll(window.scrollY > 60);
+      });
+      document.removeEventListener('contextmenu', (e) => {e.preventDefault();});
+    };
   }, []);
+
+  
 
 
   return (
-    <div id="app-base">
+    <div id="app-base" className={activeElement ? "prevent-scroll" : ""}>
       <header id="home-header" className={scroll ? "small-header" : ""}>
         <div id="logo-container">
           <h1>UpGrade</h1>
@@ -21,6 +37,7 @@ function App() {
 
       </header>
       <PeriodContainer />
+      <GradeView />
     </div>
   );
 }

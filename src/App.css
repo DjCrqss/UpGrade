@@ -3,10 +3,18 @@
 body{
   -webkit-tap-highlight-color: transparent;
 }
+body::-webkit-scrollbar {
+  display: none;
+}
 
 #app-base{
   /* max-width: 450px; */
   user-select: none;
+}
+
+.prevent-scroll{
+  height: 100vh;
+  overflow-y: hidden;
 }
 
 div{
@@ -89,6 +97,9 @@ h2{
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
 }
+.small-view{ /* This shrinks panel on laptops */
+  width: calc(100vw - 600px);
+}
 
 #year-container::-webkit-scrollbar {
   display: none;
@@ -154,6 +165,11 @@ h2{
   border-radius: 1em;
   padding: 1rem 1.5rem;
   box-sizing: border-box;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease-in-out;
+}
+.course:hover{
+  box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.05);
 }
 
 
@@ -289,6 +305,11 @@ cursor: pointer;
   }
 }
 
+@media screen and (max-width: 1100px) {
+  .small-view{
+    width: initial;
+  }
+}
 
 
 
