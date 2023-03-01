@@ -2,7 +2,7 @@ import React from "react";
 
 export default function CourseResults(){
     return(
-        <section class="card">
+        <section className="card">
            Results
         </section>
     )

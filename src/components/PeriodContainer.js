@@ -24,10 +24,9 @@ export default function PeriodContainer() {
         if (years.some(year => year.name === curYear)) { newName = prompt("Enter a name for the new item").trim() }
         else { newName = curYear }
         addItem(childCategory, { name: newName, parentId: myId });
-        document.getElementById("year-container").scrollTo({
-            left: 0,
-            behavior: "smooth",
-        });
+        setTimeout(() => {
+            document.getElementById("year-container").firstChild.scrollIntoView({ behavior: "smooth", block: "center" });
+        }, 50);
     }
 
     const handleScroll = ref => {

@@ -87,7 +87,7 @@ h2{
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
 
-  transition: width 0.6s;
+  transition: width 0.3s;
 }
 .small-view{ /* This shrinks panel on laptops */
   width: calc(100vw - 550px) !important;

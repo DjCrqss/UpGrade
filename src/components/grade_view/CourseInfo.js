@@ -2,11 +2,11 @@ import React from "react";
 
 export default function CourseInfo(){
     return(
-        <section class="cards-container">
-            <div class="card">
+        <section className="cards-container">
+            <div className="card">
                 Summary
             </div>
-            <div class="card">
+            <div className="card">
                 Grade goal
             </div>
         </section>
