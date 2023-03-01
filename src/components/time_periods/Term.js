@@ -5,7 +5,7 @@ import DropdownMenu from "../buttons/DropdownMenu";
 import Course from "./Course";
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
-export default function Term({termData}) {
+export default function Term({termData, theme}) {
     const { courses } = React.useContext(DataContext);
 
     // my data
@@ -17,14 +17,14 @@ export default function Term({termData}) {
     const courseElements = courses.filter(e => e.parentId === myId).map((course, index) => {
         return(
             <CSSTransition key={index} timeout={300} classNames="fade-item">
-                <Course courseData={course} />
+                <Course courseData={course} theme={theme} />
             </CSSTransition>
             
         )
     });
 
     return (
-        <div className="term">
+        <div className={`term term-${theme}`}>
             <span className="term-title">{myName}</span>
             <TransitionGroup className="term-courses-container">
                 {courseElements}

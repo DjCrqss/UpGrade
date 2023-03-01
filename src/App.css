@@ -1,8 +1,11 @@
 /* Testing */
 
+body{
+  -webkit-tap-highlight-color: transparent;
+}
 
 #app-base{
-  max-width: 450px;
+  /* max-width: 450px; */
   user-select: none;
 }
 
@@ -25,21 +28,6 @@ div{
   --subtitle-colour: #9D95A2; 
   --card-text-colour: #7C787E;
   --popup-text-colour: #A6A1A8;
-
-  --purple-bg-colour: #847394;
-  --purple-text-colour: #CEC0DC;
-
-  --yellow-bg-colour: #8A7145;
-  --yellow-card-colour: #B89C69;
-  --yellow-text-colour: #FED792;
-
-  --green-bg-colour: #466740;
-  --green-card-colour: #6C8C6C;
-  --green-text-colour: #BFE7A1;
-
-  --blue-bg-colour: #325C66;
-  --blue-card-colour: #5A7F8A;
-  --blue-text-colour: #A1DEE7;
 }
 
 body{
@@ -55,22 +43,41 @@ header{
   justify-content: flex-end;
   padding: 1.5rem;
   background-color: var(--header-colour);
+  transition: padding 0.2s ease-in-out;
+  /* animation: app-start-anim 1s 0.4s ease-in-out forwards; */
 }
+
+/* #logo-container{
+  transform: translate(32%)  translateY(-30vw) scale(1.1);
+  animation: app-start-anim-logo 1s 0.4s ease-in-out forwards;
+} */
+
+/* @keyframes app-start-anim-logo{
+
+  to{
+    transform: translateX(0%) translateY(0) scale(1);
+  }
+}
+@keyframes app-start-anim{
+  to{
+    height: 25vh;
+  }
+} */
+
 h1{
   color: var(--title-colour);
+  transition: font-size 0.2s ease-in-out;
   font-size: 3em;
   margin: 0;
 }
 h2{
   color: var(--subtitle-colour);
+  transition: font-size 0.2s ease-in-out;
   font-size: 0.85em;
   margin: -0.5em 0 0 4em;
 }
 
 /* Cards */
-/* #period-container{
-  min-height: 65vh;
-} */
 #year-container{
   overflow-x: scroll;
 
@@ -91,8 +98,8 @@ h2{
 }
 
 .year{
-  width: min(105%, 380px);
-  margin: 0 2%;
+  width: min(105%, 420px);
+  margin: 0 0.5em;
   height: 75vh;
   flex: 0 0 auto;
   scroll-snap-align: center;
@@ -108,28 +115,12 @@ h2{
   border-radius: 1em;
   padding: 1.5rem;
   box-sizing: border-box;
-
+  color: var(--card-text-colour);
 }
 .year-title{
   font-size: 2em;
   font-weight: bold;
-  color: var(--card-text-colour);
-}
-#mock-add-year-button{
-  flex: 0 0 auto;
-    height: 75vh;
-    scroll-snap-align: center;
-    width: min(200px, 80%);
-    margin: 0 2%;
-    background-color: var(--card-colour);
-    border-radius: 0.5em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 2em;
-    color: var(--card-active-colour);
-    cursor: pointer;
+  
 }
 .year-terms-container{
   display: flex;
@@ -141,15 +132,13 @@ h2{
   display: flex;
   flex-direction: column;
   gap: 1em;
-  background-color: var(--yellow-bg-colour);
   border-radius: 1em;
   padding: 1.2rem;
   box-sizing: border-box;
-  
 }
+
 .term-title{
   font-weight: bold;
-  color: var(--yellow-text-colour);
 }
 .term-courses-container{
   display: flex;
@@ -166,9 +155,6 @@ h2{
   padding: 1rem 1.5rem;
   box-sizing: border-box;
 }
-.course-title{
-  color: var(--yellow-text-colour);
-}
 
 
 
@@ -176,7 +162,7 @@ h2{
 
 
 
-/* New button */
+/* New item button */
 .new-button-container{
   margin-top: auto;
 }
@@ -185,8 +171,40 @@ h2{
   font-size: 0.8em;
   cursor: pointer;
   float: right;
-  color: var(--title-colour);
   margin-top: 0.2em;
+}
+.new-button-link:hover{
+  text-decoration: underline;
+  text-underline-offset: 0.1em;
+  text-decoration-thickness: 0.1em;
+}
+/* Mock new button for years only */
+#mock-add-year-button-container{
+  flex: 0 0 auto;
+  height: 75vh;
+  scroll-snap-align: center;
+  width: min(200px, 80%);
+  margin: 0 0.5em;
+  background-color: var(--card-colour);
+  border-radius: 1em;
+  box-sizing: border-box;
+  padding: 1.5em;
+  color: var(--card-active-colour);
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, width 0.2s ease-in-out;
+}
+#mock-add-year-button{
+height: 100%;
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+font-weight: bold;
+font-size: 2em;
+cursor: pointer;
+}
+#mock-add-year-button-container:hover{
+  background-color: var(--card-active-colour);
+  color: var(--card-text-colour);
 }
 
 
@@ -201,7 +219,7 @@ h2{
   display: flex;
   flex-direction: column;
   position: absolute;
-  right: 0;
+  right: 0.5em;
   background-color: var(--popup-colour);
   padding: 0.25em 0;
   z-index: 10;
@@ -209,8 +227,7 @@ h2{
   border-radius: 0.5em;
 }
 .time-period-menu-container > span {
-
-  margin: 0.5em 0.5em 0 0;
+  margin: 0.3em 0.3em 0 0;
 }
 .material-symbols-outlined {
   font-family: 'Material Symbols Outlined';
@@ -227,8 +244,13 @@ h2{
   -webkit-font-feature-settings: 'liga';
   -webkit-font-smoothing: antialiased;
   cursor: pointer;
-  color: var(--title-colour);
   user-select: none;
+  padding: 0.1em;
+  border-radius: 2em;
+  transition: background-color 0.2s ease-in-out;
+}
+.time-period-menu-container > .material-symbols-outlined:hover{
+  background-color: #ffffff10;
 }
 
 .time-period-menu-item{
@@ -239,6 +261,7 @@ h2{
   color: var(--title-colour);
   padding: 0.5em 1em;
   cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
 }
 
 .time-period-menu-item:hover{
@@ -248,6 +271,21 @@ h2{
 @media screen and (max-width: 600px) {
   body{
     font-size: 1.2em;
+  }
+  .year, #mock-add-year-button-container{
+    margin: 0 0.25em;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .small-header{
+    padding: 2.25rem;
+  }
+  .small-header h1{
+    font-size: 2em;
+  }
+  .small-header h2{
+    font-size: 0.58em;
   }
 }
 

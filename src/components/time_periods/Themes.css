@@ -1,0 +1,74 @@
+:root{
+    --purple-bg-colour: #847394;
+    --purple-text-colour: #CEC0DC;
+  
+    --yellow-bg-colour: #8A7145;
+    --yellow-card-colour: #B89C69;
+    --yellow-text-colour: #ffe8bf;
+  
+    --green-bg-colour: #466740;
+    --green-card-colour: #6C8C6C;
+    --green-text-colour: #BFE7A1;
+  
+    --blue-bg-colour: #325C66;
+    --blue-card-colour: #5A7F8A;
+    --blue-text-colour: #A1DEE7;
+
+    --red-bg-colour: #794848;
+    --red-card-colour: #996c6c;
+    --red-text-colour: #f8cece;
+
+    --pink-bg-colour: #8C6C7F;
+    --pink-card-colour: #B28CA1;
+    --pink-text-colour: #FED7E7;
+
+    --purple-bg-colour: #766888;
+    --purple-card-colour: #9080a3;
+    --purple-text-colour: #E7D7E7;
+}
+
+.term-yellow {
+    background-color: var(--yellow-bg-colour);
+    color: var(--yellow-text-colour);
+}
+
+.term-green {
+    background-color: var(--green-bg-colour);
+    color: var(--green-text-colour);
+}
+
+.term-blue {
+    background-color: var(--blue-bg-colour);
+    color: var(--blue-text-colour);
+}
+.term-red {
+    background-color: var(--red-bg-colour);
+    color: var(--red-text-colour);
+}
+.term-pink {
+    background-color: var(--pink-bg-colour);
+    color: var(--pink-text-colour);
+}
+.term-purple {
+    background-color: var(--purple-bg-colour);
+    color: var(--purple-text-colour);
+}
+
+.course-yellow {
+    background-color: var(--yellow-card-colour);
+}
+.course-green {
+    background-color: var(--green-card-colour);
+}
+.course-blue {
+    background-color: var(--blue-card-colour);
+}
+.course-red {
+    background-color: var(--red-card-colour);
+}
+.course-pink {
+    background-color: var(--pink-card-colour);
+}
+.course-purple {
+    background-color: var(--purple-card-colour);
+}

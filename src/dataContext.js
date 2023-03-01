@@ -3,19 +3,17 @@ import React, { useState, useEffect, createContext } from 'react';
 export const DataContext = createContext({});
 
 export const DataContextProvider = (props) => {
+    // Global variables
+    const colours = ["yellow", "blue", "green", "red", "pink", "purple"];
     const currentYear = new Date().getFullYear();
     // Custom variables
-    const [years, setYears] = useState([
-        {
-            name: currentYear,
-            myId: 0,
-        }
-    ]);
+    const [years, setYears] = useState([{ name: currentYear, myId: createUniqueId([]), }]); // default year if none
     const [terms, setTerms] = useState([]);
     const [courses, setCourses] = useState([]);
     const [groups, setGroups] = useState([]);
     const [grades, setGrades] = useState([]);
     const [dataToSave, setDataToSave] = useState(false);
+    const [activeElement , setActiveElement] = useState(false);
 
 
     function renameItem(dataCategory, id, payload) {
@@ -192,14 +190,17 @@ export const DataContextProvider = (props) => {
 
 
     const dataContextStore = {
+        colours,
         years,
         terms,
         courses,
         groups,
         grades,
+        activeElement,
         renameItem,
         addItem,
-        removeItem
+        removeItem,
+        setActiveElement,
     }
 
     return <DataContext.Provider value={dataContextStore}>{props.children}</DataContext.Provider>

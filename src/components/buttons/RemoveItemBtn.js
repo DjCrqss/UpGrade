@@ -10,7 +10,7 @@ export default function RemoveItemButton({dataCategory, id, clickAction}) {
     }
 
     return (
-        <div className="time-period-menu-item" onClick={action}>
+        <div className="time-period-menu-item" onClickCapture={action}>
             <span className="material-symbols-outlined">
                 delete
             </span>

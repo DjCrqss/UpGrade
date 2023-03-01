@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useRef }  from "react";
 import { DataContext } from "../dataContext";
 import Year from "./time_periods/Year";
+import './time_periods/Themes.css';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 export default function PeriodContainer() {
@@ -8,6 +9,7 @@ export default function PeriodContainer() {
     const childCategory = "year";
     const curYear = new Date().getFullYear();
     const myId = null;
+    const mockButtonRef = useRef();
 
     const yearElements = years.map((year, index) => {
         return(
@@ -24,14 +26,22 @@ export default function PeriodContainer() {
             behavior: "smooth",
           });
     }
+
+    const handleScroll = ref => {
+        ref.current.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
     
     return (
         <div id="period-container">
              <TransitionGroup id="year-container">
-             {yearElements}
-                <div id="mock-add-year-button" onClick = {() => addYear()}>
-                    +
-                </div>
+                {yearElements}
+                <CSSTransition key={'mock-add-button'} timeout={300} classNames="fade-item">
+                    <div id="mock-add-year-button-container" ref={mockButtonRef} onClickCapture={() => handleScroll(mockButtonRef)}>
+                        <div id="mock-add-year-button"  onClick = {() => addYear()}>
+                            +
+                        </div>
+                    </div>
+                </CSSTransition>
              </TransitionGroup>
         </div>
     );

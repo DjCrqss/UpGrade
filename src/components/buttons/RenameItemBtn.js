@@ -5,7 +5,8 @@ export default function RenameItemButton({dataCategory, id, clickAction}) {
     const { renameItem } = React.useContext(DataContext);
 
     function action() {
-        const newName = prompt("Enter a new name for the item");
+        const newName = prompt("Enter a new name for the item").trim();
+        if(!newName){return}
         const payload = {
             name: newName,
         }
@@ -14,7 +15,7 @@ export default function RenameItemButton({dataCategory, id, clickAction}) {
     }
 
     return (
-        <div className="time-period-menu-item" onClick={action}>
+        <div className="time-period-menu-item" onClickCapture={action}>
         <span className="material-symbols-outlined">
             drive_file_rename_outline
         </span>
