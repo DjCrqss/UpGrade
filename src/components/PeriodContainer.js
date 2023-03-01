@@ -1,8 +1,8 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { DataContext } from "../dataContext";
 import Year from "./time_periods/Year";
 import './time_periods/Themes.css';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { CSSTransition } from 'react-transition-group';
 
 export default function PeriodContainer() {
     const { years, addItem, activeElement } = React.useContext(DataContext);
@@ -10,6 +10,7 @@ export default function PeriodContainer() {
     const curYear = new Date().getFullYear();
     const myId = null;
     const mockButtonRef = useRef();
+    const divRef = useRef();
 
     const yearElements = years.map((year, index) => {
         return (
@@ -33,18 +34,22 @@ export default function PeriodContainer() {
         ref.current.scrollIntoView({ behavior: "smooth", block: "center" });
     }
 
+    useEffect(() => {
+        setTimeout(() => {
+            divRef.current.scrollTo(0, 0);
+        }, 1);
+    }, [])
+
     return (
-        <div id="period-container" >
-            <TransitionGroup id="year-container" className={activeElement ? "small-view" : ""} >
+        <div id="period-container">
+            <div id="year-container" className={activeElement ? "small-view" : ""} ref={divRef}>
                 {yearElements}
-                <CSSTransition key={'mock-add-button'} timeout={300} classNames="fade-item">
-                    <div id="mock-add-year-button-container" ref={mockButtonRef} onClickCapture={() => handleScroll(mockButtonRef)}>
-                        <div id="mock-add-year-button" onClick={() => addYear()}>
-                            +
-                        </div>
+                <div id="mock-add-year-button-container" ref={mockButtonRef} onClickCapture={() => handleScroll(mockButtonRef)}>
+                    <div id="mock-add-year-button" onClick={() => addYear()}>
+                        +
                     </div>
-                </CSSTransition>
-            </TransitionGroup>
+                </div>
+            </div>
         </div>
     );
 }

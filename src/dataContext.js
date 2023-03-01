@@ -14,6 +14,7 @@ export const DataContextProvider = (props) => {
     const [grades, setGrades] = useState([]);
     const [dataToSave, setDataToSave] = useState(false);
     const [activeElement , setActiveElement] = useState(false);
+    const [isHome , setIsHome] = useState(true);
 
 
     function renameItem(dataCategory, id, payload) {
@@ -199,6 +200,21 @@ export const DataContextProvider = (props) => {
             if (!array.some(e => e.myId === id)) return id;
         }
     }
+
+    // Handle back button
+    useEffect(() => {
+        if (!activeElement || !isHome) return;
+        console.log("Course opened");
+        window.history.pushState({}, {});
+        setIsHome(false);
+    }, [activeElement, isHome])
+
+    window.onpopstate = () => {
+        console.log("Back button pressed");
+        setActiveElement(false);
+        setIsHome(true);
+    }
+
 
     const dataContextStore = {
         colours,

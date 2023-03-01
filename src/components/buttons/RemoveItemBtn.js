@@ -7,6 +7,8 @@ export default function RemoveItemButton({dataCategory, id, clickAction}) {
     function action(e) {
         clickAction(false);
         e.stopPropagation();
+        const confirm = window.confirm(`Are you sure you want to delete this ${dataCategory}?`);
+        if(!confirm){return}
         removeItem(dataCategory, id);
     }
 

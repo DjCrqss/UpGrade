@@ -134,7 +134,7 @@
         pointer-events: all;
         background-color: #1c1b1eb8;
         backdrop-filter: blur(3px);
-        height: calc(100vh - 42px);
+        
     }
 }
 
@@ -150,5 +150,9 @@
 
     #grade-view-body{
         padding: 1em 0.5em;
+    }
+
+    #grade-view-backdrop{
+        height: calc(100vh - 42px);
     }
 }
