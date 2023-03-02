@@ -89,6 +89,47 @@
 }
 
 
+/* #grade-view div{
+    background-color: #ffffff10;
+    padding: 1em;
+} */
+
+
+
+/* Groups */
+.gradeview-groups-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.gradeview-group{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    /* background-color: red; */
+}
+
+.group-title{
+    line-height: 2.5em;
+}
+
+.gradeview-group:not(:first-child){
+    border-top: 1px solid var(--card-active-colour);
+    padding-top: 1em;
+}
+
+.group-grades-container{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.grade{
+    background-color: var(--card-active-colour);
+    padding: 1em;
+}
+
 
 
 

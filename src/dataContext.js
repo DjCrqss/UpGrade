@@ -174,6 +174,8 @@ export const DataContextProvider = (props) => {
         // remove excess data
         const modifiedTerms = [...terms].filter(e => years.some(y => y.myId === e.parentId));
         const modifiedCourses = [...courses].filter(e => modifiedTerms.some(t => t.myId === e.parentId));
+        const modifiedGroups = [...groups].filter(e => modifiedCourses.some(c => c.myId === e.parentId));
+        const modifiedGrades = [...grades].filter(e => modifiedGroups.some(g => g.myId === e.parentId));
 
         // close course popup if element or it's parent is removed
         if(!modifiedCourses.some(e => e.myId === activeElement)){ setActiveElement(false);}
@@ -182,8 +184,8 @@ export const DataContextProvider = (props) => {
         localStorage.setItem("years", JSON.stringify(years));
         localStorage.setItem("terms", JSON.stringify(modifiedTerms));
         localStorage.setItem("courses", JSON.stringify(modifiedCourses));
-        localStorage.setItem("groups", JSON.stringify(groups));
-        localStorage.setItem("grades", JSON.stringify(grades));
+        localStorage.setItem("groups", JSON.stringify(modifiedGroups));
+        localStorage.setItem("grades", JSON.stringify(modifiedGrades));
 
         setDataToSave(false);            
     }, [dataToSave, years, terms, courses, groups, grades, activeElement]);

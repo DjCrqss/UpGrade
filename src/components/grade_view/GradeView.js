@@ -31,7 +31,7 @@ export default function GradeView() {
                         </div>
                         <main id="grade-view-body">
                             <CourseInfo />
-                            <GradesContainer />
+                            <GradesContainer courseData={course}/>
                             <CourseResults />
                         </main>
 
