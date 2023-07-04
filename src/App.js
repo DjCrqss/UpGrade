@@ -34,7 +34,7 @@ function App() {
       <header id="home-header" className={scroll ? "small-header" : ""}>
         <div id="logo-container">
           <h1>UpGrade</h1>
-          <h2>your grade calculator</h2>
+          <h2 id="logo-subtitle">your grade calculator</h2>
         </div>
 
       </header>

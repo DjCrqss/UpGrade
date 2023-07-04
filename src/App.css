@@ -73,7 +73,7 @@ h1 {
   text-overflow: ellipsis;
 }
 
-h2 {
+#logo-subtitle {
   color: var(--subtitle-colour);
   transition: font-size 0.2s ease-in-out;
   font-size: 0.85em;

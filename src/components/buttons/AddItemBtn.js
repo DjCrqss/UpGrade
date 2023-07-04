@@ -18,7 +18,7 @@ export default function AddItemButton({dataCategory, parentId}) {
 
     return (
         <div className="new-button-container">
-            <span className = {className} onClick={action}>Add new {dataCategory}</span>
+            <span className = {className} onClick={action}>Add {dataCategory}</span>
         </div>
     );
 }

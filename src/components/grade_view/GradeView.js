@@ -12,7 +12,6 @@ export default function GradeView() {
     const dataCategory = "course";
 
     const course = getCourseById(activeElement);
-    console.log(course);
 
     return (
         <TransitionGroup>
@@ -34,7 +33,7 @@ export default function GradeView() {
                         <main id="grade-view-body">
                             <CourseInfo dataCategory={dataCategory} course={course}/>
                             <GradesContainer courseData={course}/>
-                            <CourseResults />
+                            <CourseResults courseData={course}/>
                         </main>
                     </div>
                 </div>

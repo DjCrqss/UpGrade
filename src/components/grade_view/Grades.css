@@ -120,7 +120,7 @@ input{
     font-family: inherit;
     padding: 0;
     background-color: transparent;
-    font-size: 1.25em;
+    font-size: 1.1em;
 
 }
 
@@ -154,9 +154,19 @@ input{
 
 .grade{
     display: grid;
-    grid-template-columns: 50% 25% 25%;
-    gap: 0.5em;
+    grid-template-columns: 44% 22% 22% 6%;
+    gap: 2%;
     align-items: stretch;
+}
+
+.delete-grade-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--text-color);
+    font-size: 1em;
+    transition: color 0.2s ease-in-out;
 }
 
 
@@ -207,6 +217,15 @@ input{
 
 
 
+/* Results */
+#course-average{
+    display: block;
+    font-size: 2.25em;
+    color: var(--text-colour);
+    font-weight: bold;
+}
+
+
 
 
 
@@ -232,7 +251,7 @@ input{
 /* Scroll bars */
 #grade-view::-webkit-scrollbar {
     background-color: transparent;
-    width: 0.2em;
+    width: 0.8em;
 }
 
 #grade-view::-webkit-scrollbar-thumb {

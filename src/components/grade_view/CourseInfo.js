@@ -16,7 +16,7 @@ export default function CourseInfo({dataCategory, course}){
         if(content > 100) content = 100;
 
         const payload = {
-            gradeGoal: parseFloat(content),
+            gradeGoal: +parseFloat(content).toFixed(2),
         }
         renameItem(dataCategory, course.myId, payload);
     }
