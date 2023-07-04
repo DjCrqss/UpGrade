@@ -62,7 +62,6 @@
 }
 
 /* Card styles */
-
 .card{
     background-color: var(--card-colour);
     color: var(--card-text-colour);
@@ -72,6 +71,10 @@
 
     box-sizing: border-box;
     padding: 1.5em;
+}
+
+.card > .new-button-container > .new-button-link{
+    float: left;
 }
 
 .cards-container{
@@ -86,6 +89,120 @@
 
 .cards-container .card:last-child{
     border-radius: 0.2em 0.2em 1em 1em;
+}
+
+
+
+/* Text styles */
+h2 {
+    font-size: 1.2em;
+    margin: 0 0 0.25em 0;
+    font-weight: 500;
+    color: var(--card-text-colour);
+}
+
+textarea {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    resize: none;
+    font-size: 1em;
+    color: var(--subtitle-colour);
+    width: 100%;
+    font-family: inherit;
+    padding: 0;
+}
+
+input{
+    border: none;
+    outline: none;
+    color: var(--subtitle-colour);
+    font-family: inherit;
+    padding: 0;
+    background-color: transparent;
+    font-size: 1.25em;
+
+}
+
+
+
+.course-groups-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
+.group-grades-container{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.group{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    width: 100%;
+
+}
+
+.card .time-period-menu-container > span{
+    margin: 0;
+}
+
+.grade{
+    display: grid;
+    grid-template-columns: 50% 25% 25%;
+    gap: 0.5em;
+    align-items: stretch;
+}
+
+
+.grade-score, .grade-weight{
+    display: flex;
+    flex-direction: row;
+}
+
+.grade-title{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.grade-score, .grade-weight, .grade-title{
+    background-color: #252428;
+    padding: 0.5em 1em;
+    box-sizing: border-box;
+    align-items: center;
+    border-radius: 0.5em;
+    gap: 0.1em;
+}
+
+.grade-table-header{
+    opacity: 0.5;
+    font-size: 0.85em;
+    margin-left: 0.6em;
+    font-style: italic;
+}
+
+.percentage-input{
+    text-align: right;
+    max-width: 2.5em;
+}
+
+/* Chrome, Safari, Edge, Opera */
+.percentage-input::-webkit-outer-spin-button,
+.percentage-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.percentage-input[type=number] {
+  -moz-appearance: textfield;
 }
 
 

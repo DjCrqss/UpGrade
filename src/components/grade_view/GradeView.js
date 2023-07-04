@@ -9,8 +9,10 @@ import CourseResults from "./CourseResults";
 
 export default function GradeView() {
     const { activeElement, setActiveElement, getCourseById } = React.useContext(DataContext);
+    const dataCategory = "course";
 
     const course = getCourseById(activeElement);
+    console.log(course);
 
     return (
         <TransitionGroup>
@@ -30,11 +32,10 @@ export default function GradeView() {
                             <h1>{course.name}</h1>
                         </div>
                         <main id="grade-view-body">
-                            <CourseInfo />
-                            <GradesContainer />
+                            <CourseInfo dataCategory={dataCategory} course={course}/>
+                            <GradesContainer courseData={course}/>
                             <CourseResults />
                         </main>
-
                     </div>
                 </div>
             </CSSTransition>

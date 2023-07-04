@@ -16,7 +16,7 @@ export const DataContextProvider = (props) => {
     const [activeElement , setActiveElement] = useState(false);
     const [isHome , setIsHome] = useState(true);
 
-
+    // function to update data for a given item
     function renameItem(dataCategory, id, payload) {
         switch (dataCategory) {
             case "year":

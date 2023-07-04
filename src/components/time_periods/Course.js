@@ -7,7 +7,7 @@ export default function Course({courseData, theme}) {
     const dataCategory = "course";
     const myName = courseData.name;
     const myId = courseData.myId;
-    const { setActiveElement } = React.useContext(DataContext);
+    const { activeElement, setActiveElement } = React.useContext(DataContext);
     const myRef = useRef();
 
     // TODO: work out how to properly interact withthe page resize and scrollIntoView together
@@ -15,13 +15,12 @@ export default function Course({courseData, theme}) {
         myRef.current.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
         e.stopPropagation();
         setActiveElement(myId);
-        setTimeout(() => {
-            myRef.current.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
-        }, 310);
+        if(!activeElement){
+            setTimeout(() => {
+                myRef.current.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+            }, 310);
+        }
     }
-
-
-   
 
     return (
         <div className={`course course-${theme}`} onClick={handleClick} ref={myRef}>
