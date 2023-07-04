@@ -249,14 +249,17 @@ input{
 }
 
 /* Scroll bars */
-#grade-view::-webkit-scrollbar {
-    background-color: transparent;
-    width: 0.8em;
-}
 
-#grade-view::-webkit-scrollbar-thumb {
-    background-color: var(--card-colour);
-    border-radius: 1em;
+@media screen and (min-width: 560px) {
+    #grade-view::-webkit-scrollbar {
+        background-color: transparent;
+        width: 0.8em;
+    }
+
+    #grade-view::-webkit-scrollbar-thumb {
+        background-color: var(--card-colour);
+        border-radius: 1em;
+    }
 }
 
 
@@ -285,10 +288,25 @@ input{
     }
 
     #grade-view-body{
-        padding: 1em 0.5em;
+        padding: 1em 0.5em calc(1em + 60px) 0.5em;
     }
 
     #grade-view-backdrop{
         height: calc(100vh - 42px);
     }
+
+    input{
+        font-size: 0.9em;
+    }
+
+    .grade-score, .grade-weight{
+        padding: 0.5em 0.2em;
+        overflow-x: clip;
+    }
+
+    .group-grades-container{
+        width: 100%;
+    }
+
+    
 }
