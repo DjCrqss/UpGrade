@@ -25,11 +25,11 @@ export default function CourseInfo({dataCategory, course}){
         <section className="cards-container">
             <div className="card">
                <h2>Summary</h2>
-               <textarea rows='2' value={course.summary}  onChange={e => updateSummary(e.target.value)}></textarea>
+               <textarea rows='2' value={course.summary} placeholder="Enter a course description here." onChange={e => updateSummary(e.target.value)}></textarea>
             </div>
             <div className="card">
                 <h2>Grade goal</h2>
-                <input type="number" min="0" max="100" value={course.gradeGoal || ''} onChange={e => updateGoal(e.target.value)}></input>
+                <input type="number" min="0" max="100" placeholder="---.--" className="percentage-input" value={course.gradeGoal || ''} onChange={e => updateGoal(e.target.value)}></input>%
             </div>
         </section>
     )

@@ -17,7 +17,6 @@ export default function Group({ groupData }) {
     const gradeElements = grades.filter(e => e.parentId === myId).map((grade, index) => {
         return (
             <CSSTransition key={index} timeout={300} classNames="fade-item">
-                {/* <span>{grade.name}</span> */}
                 <Grade gradeData={grade} />
             </CSSTransition>
         )
@@ -31,12 +30,12 @@ export default function Group({ groupData }) {
                     <span className="grade-table-header">Name</span>
                     <div className="grade-table-header">Score</div>
                     <div className="grade-table-header">Weight</div>
-                    {/* <DropdownMenu dataCategory={dataCategory} id={myId}  name={myName}/> */}
                 </div>
                 {gradeElements}
             </TransitionGroup>
             <DropdownMenu dataCategory={dataCategory} id={myId} name={myName} />
-            <AddItemButton dataCategory={childCategory} parentId={myId} />
+            {/* Add grade button */}
+            <AddItemButton dataCategory={childCategory} parentId={myId} needsName={false} />
         </div>
     );
 }

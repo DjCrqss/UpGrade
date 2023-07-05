@@ -78,10 +78,17 @@ export const DataContextProvider = (props) => {
                 setDataToSave(true);
                 break;
             case "course":
+                // create coure object
                 const modifiedCourses = [...courses]
                 payload.myId = createUniqueId(modifiedCourses);
                 modifiedCourses.push(payload);
                 setCourses(modifiedCourses);
+                // create grade group object
+                const groupPayload = {
+                    name: "Assignments",
+                    parentId: payload.myId
+                }
+                addItem("group", groupPayload);
                 setDataToSave(true);
                 break;
             case "group":
@@ -89,6 +96,12 @@ export const DataContextProvider = (props) => {
                 payload.myId = createUniqueId(modifiedGroups);
                 modifiedGroups.push(payload);
                 setGroups(modifiedGroups);
+                // create grade object
+                const gradePayload = {
+                    name: "testtest",
+                    parentId: payload.myId
+                }
+                addItem("grade", gradePayload);
                 setDataToSave(true);
                 break;
             case "grade":

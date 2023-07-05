@@ -22,10 +22,12 @@ export default function GradesContainer({courseData}) {
 
     return (
         <section className="card">
+            {groupElements.length == 0 && <h2>Grades</h2>}
             <TransitionGroup className="course-groups-container">
                 {groupElements}
             </TransitionGroup>
-            <AddItemButton dataCategory={childCategory} parentId={myId} />
+            {/* Add group button */}
+            <AddItemButton dataCategory={childCategory} parentId={myId}/>
         </section>
     );
 }

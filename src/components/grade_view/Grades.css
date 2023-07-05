@@ -224,7 +224,9 @@ input{
     color: var(--text-colour);
     font-weight: bold;
 }
-
+.bold{
+    font-weight: bold;
+}
 
 
 

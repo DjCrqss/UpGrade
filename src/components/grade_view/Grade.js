@@ -43,12 +43,12 @@ export default function Group({gradeData}) {
     }
 
     var opacity = {
-        opacity: gradeData.weight > 0 ? 1 : 0.4,
+        opacity: gradeData.weight > 0 ? 1 : 0.55,
     }
 
     return (
         <div className={`grade`} style={opacity}>
-            <input type="text" className="grade-title" value={myName}  onChange={e => updateName(e.target.value)}></input>
+            <input type="text" className="grade-title" value={myName} placeholder="Grade name" onChange={e => updateName(e.target.value)}></input>
             <div className="grade-score"><input className="percentage-input" type="number" min="0" max="100" value={gradeData.grade || ''} placeholder="0" onChange={e => updateScore(e.target.value)}></input>%</div>
             <div className="grade-weight"><input className="percentage-input" type="number" min="0" max="100" value={gradeData.weight || ''} placeholder="0" onChange={e => updateWeight(e.target.value)}></input>%</div>
             <span className="material-symbols-outlined delete-grade-btn" onClick={()=>deleteGrade()}>close </span>

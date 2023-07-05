@@ -1,16 +1,19 @@
 import React from "react";
 import { DataContext } from "../../dataContext";
 
-export default function AddItemButton({dataCategory, parentId}) {
+export default function AddItemButton({dataCategory, parentId, needsName}) {
     const { addItem } = React.useContext(DataContext);
 
     const className = `new-button-link new-button-${dataCategory}`;
 
     function action() {
-        const name = prompt(`Name for ${dataCategory}`).trim();
-        if(!name){return}
+        var name = "";
+        if(needsName !== false){
+            name = prompt(`Name for ${dataCategory}`);
+            if(!name){return}
+        }
         const payload = {
-            name: name,
+            name: name.trim(),
             parentId: parentId
         }
         addItem(dataCategory, payload);

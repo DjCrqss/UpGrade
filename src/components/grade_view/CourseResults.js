@@ -5,6 +5,8 @@ export default function CourseResults({courseData}){
     const {groups, grades} = React.useContext(DataContext);
 
     const [results, setResults] = React.useState(0);
+    const [amountToGoal, setAmountToGoal] = React.useState(0);
+    const [totalWeight, setTotalWeight] = React.useState(0);
 
     React.useEffect(() => {
         // collect all grades from groups that are children of this course
@@ -17,23 +19,60 @@ export default function CourseResults({courseData}){
         })
 
 
-        // calculate score
-        const score = results.reduce((acc, item) => {
+        // calculate score and weight
+        var weight = 0;
+        var score = results.reduce((acc, item) => {
+            if(item.weight){ weight += item.weight;}
             if(!item.grade || !item.weight){return acc}
-            return acc + (item.grade * item.weight/100);
+            return acc + (item.grade * item.weight);
         }, 0);
+        score /= weight;
+        weight /= 100;
+        setTotalWeight(weight);
 
-        
+        // calculate amount to goal using remaing weight
+        const amountToGoal = (courseData.gradeGoal - (score * weight)) / (1 - weight);
+        setAmountToGoal(+amountToGoal.toFixed(2));
 
         setResults(score);
-    }, [groups, grades, courseData.myId])
+    }, [groups, grades, courseData.myId, courseData.gradeGoal])
 
+
+    const additionalGrade = () => {
+        if(isNaN(courseData.gradeGoal) || !courseData.gradeGoal){
+            return "";
+        }
+        else if(amountToGoal < 0){
+            return <span>You have already reached your goal of <span class="bold">{courseData.gradeGoal}%</span></span>
+        } 
+        else if (amountToGoal > 100){
+            return <span>You can't reach your goal of <span class="bold">{courseData.gradeGoal}%</span> as you need <span class="bold">{amountToGoal}%</span></span>
+
+        }
+        else if(totalWeight < 1){
+            return <span>You need an additional grade of <span class="bold">{amountToGoal}%</span> to reach <span class="bold">{courseData.gradeGoal}%</span></span>
+        }
+    
+    }
 
 
     return(
-        <section className="card">
-           Results&ensp;
-           <span id="course-average">{+results.toFixed(2)}</span>
-        </section>
+        <>
+            {totalWeight > 1 && <section className="card">
+                <h2>Warning</h2>
+                Your total weights ({+(totalWeight*100).toFixed(2)}%) are above 100%!
+                </section>
+            }
+            <section className="card">
+            <h2>Results</h2>
+            Your average so far is:
+            <span id="course-average">{+results.toFixed(2)}%</span>
+
+            {totalWeight < 1 && <span id="course-weight">Your grades only account for {+(totalWeight*100).toFixed(2)}% of your final grade.</span>} 
+            <br></br>
+            {additionalGrade()}
+
+            </section>
+        </>
     )
 }
