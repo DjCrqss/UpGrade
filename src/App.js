@@ -37,7 +37,7 @@ function App() {
           <h1>UpGrade</h1>
           <h2 id="logo-subtitle">your grade calculator</h2>
         </div>
-        <AppMenu />
+        {!activeElement && <AppMenu />}
       </header>
       <PeriodContainer />
       <GradeView />

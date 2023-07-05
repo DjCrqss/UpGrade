@@ -41,7 +41,7 @@ export default function CourseResults({courseData}){
 
     const additionalWeight = () => {
         if(totalWeight < 1 && totalWeight > 0){
-            return <span id="course-weight">Your grades only account for {+(totalWeight*100).toFixed(2)}% of your final grade.<br></br></span>
+            return <span id="course-weight">You have {+(totalWeight*100).toFixed(2)}% of your grades.<p></p></span>
         } 
     }
 
@@ -50,19 +50,19 @@ export default function CourseResults({courseData}){
             return "";
         }
         else if (amountToGoal > 0 && totalWeight >= 1){
-            return <span>You can't reach your goal of <span class="bold">{courseData.gradeGoal}%</span></span>
+            return <span>You can't reach your goal of <span class="bold">{courseData.gradeGoal}%</span> :(</span>
         }
         else if(amountToGoal < 0){
-            return <span>You have already reached your goal of <span class="bold">{courseData.gradeGoal}%</span></span>
+            return <span>You have already reached your goal of <span class="bold">{courseData.gradeGoal}%</span> :)</span>
         } 
         else if (amountToGoal > 100){
-            return <span>You can't reach your goal of <span class="bold">{courseData.gradeGoal}%</span> as you need <span class="bold">{amountToGoal}%</span></span>
+            return <span>You can't reach your goal of <span class="bold">{courseData.gradeGoal}%</span> as you need <span class="bold">{amountToGoal}%</span> :(</span>
 
         } else if (totalWeight === 0){
-            return <span>You need a grade of <span class="bold">{courseData.gradeGoal}%</span> to reach your goal</span>
+            return <span>You need a grade of <span class="bold">{courseData.gradeGoal}%</span></span>
         }
         else if(totalWeight < 1){
-            return <span>You need an additional grade of <span class="bold">{amountToGoal}%</span> to reach <span class="bold">{courseData.gradeGoal}%</span></span>
+            return <span>You need <span class="bold">{amountToGoal}%</span> additional to reach <span class="bold">{courseData.gradeGoal}%</span></span>
         }
     
     }
