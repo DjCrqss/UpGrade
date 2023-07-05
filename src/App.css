@@ -294,6 +294,13 @@ h1 {
   margin: 0.3em 0.3em 0 0;
 }
 
+#app_menu_button{
+  color: var(--subtitle-colour);
+  font-size: 1.5em;
+  margin-top: 1em;
+  margin-right: 0.5em;
+}
+
 .material-symbols-outlined {
   font-family: 'Material Symbols Outlined';
   font-weight: bold;

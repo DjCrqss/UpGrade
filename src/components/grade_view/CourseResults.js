@@ -49,6 +49,9 @@ export default function CourseResults({courseData}){
         if(isNaN(courseData.gradeGoal) || !courseData.gradeGoal){
             return "";
         }
+        else if (amountToGoal > 0 && totalWeight >= 1){
+            return <span>You can't reach your goal of <span class="bold">{courseData.gradeGoal}%</span></span>
+        }
         else if(amountToGoal < 0){
             return <span>You have already reached your goal of <span class="bold">{courseData.gradeGoal}%</span></span>
         } 
@@ -76,7 +79,7 @@ export default function CourseResults({courseData}){
             <h2>Results</h2>
             Your average so far is:
             <span id="course-average">{+results.toFixed(2)}%</span>
-
+            <br></br>
             {additionalWeight()}
             {additionalGrade()}
 

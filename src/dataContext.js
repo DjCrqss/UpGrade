@@ -181,6 +181,7 @@ export const DataContextProvider = (props) => {
         if (localGrades) setGrades(JSON.parse(localGrades));
     }
 
+    // Save data
     useEffect(() => {
         if (!dataToSave) {return}
 
@@ -214,6 +215,28 @@ export const DataContextProvider = (props) => {
         }
     }
 
+    function exportData() {
+        const data = {
+            years, 
+            terms,
+            courses,
+            groups,
+            grades
+        }
+        return data;
+    }
+
+
+    function importData(data){
+        const {years, terms, courses, groups, grades} = data;
+        setYears(years);
+        setTerms(terms);
+        setCourses(courses);
+        setGroups(groups);
+        setGrades(grades);
+        setDataToSave(true);
+    }
+
     // Handle back button
     useEffect(() => {
         if (!activeElement || !isHome) return;
@@ -241,7 +264,9 @@ export const DataContextProvider = (props) => {
         addItem,
         removeItem,
         setActiveElement,
-        getCourseById
+        getCourseById,
+        exportData,
+        importData
     }
 
     return <DataContext.Provider value={dataContextStore}>{props.children}</DataContext.Provider>
