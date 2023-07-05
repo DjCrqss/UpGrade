@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/UpGrade/static/css/main.c82498b9.css",
-    "main.js": "/UpGrade/static/js/main.ee61de0d.js",
+    "main.css": "/UpGrade/static/css/main.86fa85a5.css",
+    "main.js": "/UpGrade/static/js/main.d219e7f8.js",
     "service-worker.js": "/UpGrade/service-worker.js",
     "index.html": "/UpGrade/index.html",
-    "main.c82498b9.css.map": "/UpGrade/static/css/main.c82498b9.css.map",
-    "main.ee61de0d.js.map": "/UpGrade/static/js/main.ee61de0d.js.map"
+    "main.86fa85a5.css.map": "/UpGrade/static/css/main.86fa85a5.css.map",
+    "main.d219e7f8.js.map": "/UpGrade/static/js/main.d219e7f8.js.map"
   },
   "entrypoints": [
-    "static/css/main.c82498b9.css",
-    "static/js/main.ee61de0d.js"
+    "static/css/main.86fa85a5.css",
+    "static/js/main.d219e7f8.js"
   ]
 }
