@@ -98,7 +98,7 @@ export const DataContextProvider = (props) => {
                 setGroups(modifiedGroups);
                 // create grade object
                 const gradePayload = {
-                    name: "testtest",
+                    name: "",
                     parentId: payload.myId
                 }
                 addItem("grade", gradePayload);
