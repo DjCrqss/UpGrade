@@ -13,7 +13,7 @@ import { precacheAndRoute, createHandlerBoundToURL } from 'workbox-precaching';
 import { registerRoute } from 'workbox-routing';
 import { StaleWhileRevalidate } from 'workbox-strategies';
 
-const version = 'v1.0';
+const version = 'v2.0';
 
 clientsClaim();
 

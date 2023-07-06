@@ -1,56 +1,16 @@
-# Getting Started with Create React App
+# UpGrade Grade Calculator
+UpGrade is a intuitive grade calculator that can be installed on any of your devices. It stores your grades as you progress throughout uni, and provides estimates to make sure you can reach your goals!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Features
+UpGrade is built using React, to provide an efficient cross-platform app. No component libraries have been used here, and all the graphics have been created myself. It features a export and import JSON function so that you can back up your data or transfer it to another device!
 
-## Available Scripts
+What it provides unlike other apps will be being able to predict multiple grades at once to break down what you need to achieve your goal. It also stores it locally on your device for easy access at any time.
 
-In the project directory, you can run:
+It has three main layouts for laptops, tablets and phones. For large devices, you get a split pane layout so that you can quickly switch between courses. For smaller devices, you get a blurred background with a floating course pane or full screen.
 
-### `npm start`
+## Installation
+On desktop Chromium browsers and Android, you can install UpGrade as a PWA by clicking the install button in the address bar. On other browsers, you can install UpGrade by going to the settings menu and clicking install.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+On iOS, you will need to click share on Safari and then click add to home screen.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![UpGrade Mockup](documents/images/mockup.png)
