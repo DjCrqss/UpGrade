@@ -1,6 +1,6 @@
 {
   "short_name": "UpGrade",
-  "name": "UpGrade - Grade calculator",
+  "name": "UpGrade Grade calculator",
   "icons": [
     {
       "src": "favicon.ico",
@@ -22,11 +22,26 @@
       "type": "image/png",
       "sizes": "512x512",
       "purpose": "maskable"
+    },
+    {
+      "src": "maskable.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any"
     }
   ],
   "start_url": "/UpGrade/",
   "scope": "/UpGrade/",
   "display": "standalone",
   "theme_color": "#2A262D",
-  "background_color": "#1E1D20"
+  "background_color": "#1E1D20",
+  "description": "UpGrade is a grade calculator that can store and predict what you need to get to achieve your goals!",
+  "dir": "ltr",
+  "lang": "en",
+  "orientation": "any",
+  "categories": [
+    "education",
+    "productivity",
+    "utilities"
+  ]
 }

@@ -14,3 +14,4 @@ On desktop Chromium browsers and Android, you can install UpGrade as a PWA by cl
 On iOS, you will need to click share on Safari and then click add to home screen.
 
 ![UpGrade Mockup](documents/images/mockup.png)
+Device Mockup created from <a href="https://deviceframes.com/templates/macbook-pro-m1-14">MacBook Pro mockups</a>
