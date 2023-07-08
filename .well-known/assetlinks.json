@@ -1,0 +1,8 @@
+[{
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "io.github.djcrqss.twa",
+      "sha256_cert_fingerprints": ["79:2B:C0:45:20:E0:27:2D:0E:9C:80:F2:EC:40:1D:2C:0D:10:09:61:FF:97:77:CD:40:E2:02:7A:62:D6:B3:76"]
+    }
+  }]
