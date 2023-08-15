@@ -23,7 +23,7 @@ export default function GradesContainer({courseData}) {
     return (
         <section className="card">
             {groupElements.length == 0 && <h2>Grades</h2>}
-            <TransitionGroup className="course-groups-container">
+            <TransitionGroup className="course-groups-container" in='true'>
                 {groupElements}
             </TransitionGroup>
             {/* Add group button */}

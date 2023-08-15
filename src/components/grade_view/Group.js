@@ -25,7 +25,7 @@ export default function Group({ groupData }) {
     return (
         <div className={`group`}>
             <h2 className="group-title">{myName}</h2>
-            <TransitionGroup className="group-grades-container">
+            <TransitionGroup className="group-grades-container" in='true'>
                 <div className={`grade`}>
                     <span className="grade-table-header">Name</span>
                     <div className="grade-table-header">Score</div>
