@@ -30,8 +30,8 @@
       "purpose": "any"
     }
   ],
-  "start_url": "/apps/UpGrade/",
-  "scope": "/apps/UpGrade/",
+  "start_url": "/UpGrade/",
+  "scope": "/UpGrade/",
   "display": "standalone",
   "theme_color": "#2A262D",
   "background_color": "#1E1D20",

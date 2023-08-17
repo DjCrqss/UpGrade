@@ -2,7 +2,7 @@
   "name": "upgrade",
   "version": "0.1.0",
   "private": false,
-  "homepage": "https://www.declanx.com/apps/UpGrade/",
+  "homepage": "https://djcrqss.github.io/UpGrade/",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
