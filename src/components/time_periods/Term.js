@@ -22,7 +22,7 @@ export default function Term({termData, theme}) {
             
         )
     });
-
+    
     return (
         <div className={`term term-${theme}`}>
             <span className="term-title">{myName}</span>

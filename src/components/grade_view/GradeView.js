@@ -14,7 +14,7 @@ export default function GradeView() {
     const course = getCourseById(activeElement);
 
     return (
-        <TransitionGroup>
+        <TransitionGroup in='true'>
             {/* Backdrop */}
             {activeElement && <CSSTransition key={"grade-view-backdrop"} timeout={300} classNames="fade-item">
                 <><div id="grade-view-backdrop" onClickCapture={() => setActiveElement(false)}></div>
