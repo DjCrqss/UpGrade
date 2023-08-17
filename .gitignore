@@ -8,6 +8,8 @@ lerna-debug.log*
 
 #Build and manifests
 build/
+build
+build/*
 public/manifest.json
 package.json
 
