@@ -43,5 +43,16 @@
     "education",
     "productivity",
     "utilities"
-  ]
+  ],
+  "application": {
+    "allowBackup": false,
+    "icon": "@mipmap/ic_launcher",
+    "label": "@string/app_name",
+    "roundIcon": "@mipmap/ic_launcher_round",
+    "supportsRtl": true,
+    "instant": true,
+    "formFactors": [
+      "com.google.android.instantapp.INSTANT_APP"
+    ]
+  }
 }
